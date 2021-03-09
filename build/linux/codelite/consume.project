@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Project Name="consume">
+  <VirtualDirectory Name="consume">
+    <VirtualDirectory Name="config">
+      <File Name="../../../data/config/CreationTemplate.ini"/>
+      <File Name="../../../data/config/SettingsTemplate.ini"/>
+      <File Name="../../../data/config/consume.ini"/>
+      <File Name="../../../data/config/consumed.ini"/>
+      <File Name="../../../data/config/consumep.ini"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="src">
+      <File Name="../../../src/consume.cpp"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Settings Type="Executable">
+    <Configuration Name="Debug_x64" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/consumed" IntermediateDirectory="$(ConfigurationName)" Command="./consumed" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-msse2;-m64;-fno-exceptions;-Wno-unused-function" C_Options="-ffast-math;-g;-msse2;-m64;-Wno-unused-function">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="__orxDEBUG__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m64;-L/usr/lib64;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orxd" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Profile_x64" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/consumep" IntermediateDirectory="$(ConfigurationName)" Command="./consumep" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-msse2;-O2;-m64;-fno-exceptions;-fno-rtti;-Wno-unused-function;-fschedule-insns" C_Options="-ffast-math;-g;-msse2;-O2;-m64;-Wno-unused-function;-fschedule-insns">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="__orxPROFILER__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m64;-L/usr/lib64;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orxp" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Release_x64" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/consume" IntermediateDirectory="$(ConfigurationName)" Command="./consume" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-msse2;-O2;-m64;-fno-exceptions;-fno-rtti;-Wno-unused-function;-fschedule-insns" C_Options="-ffast-math;-g;-msse2;-O2;-m64;-Wno-unused-function;-fschedule-insns">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m64;-L/usr/lib64;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orx" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Debug_x32" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/consumed" IntermediateDirectory="$(ConfigurationName)" Command="./consumed" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-msse2;-m32;-fno-exceptions;-Wno-unused-function" C_Options="-ffast-math;-g;-msse2;-m32;-Wno-unused-function">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="__orxDEBUG__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m32;-L/usr/lib32;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orxd" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Profile_x32" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/consumep" IntermediateDirectory="$(ConfigurationName)" Command="./consumep" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-msse2;-O2;-m32;-fno-exceptions;-fno-rtti;-Wno-unused-function;-fschedule-insns" C_Options="-ffast-math;-g;-msse2;-O2;-m32;-Wno-unused-function;-fschedule-insns">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="__orxPROFILER__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m32;-L/usr/lib32;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orxp" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Release_x32" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/consume" IntermediateDirectory="$(ConfigurationName)" Command="./consume" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-msse2;-O2;-m32;-fno-exceptions;-fno-rtti;-Wno-unused-function;-fschedule-insns" C_Options="-ffast-math;-g;-msse2;-O2;-m32;-Wno-unused-function;-fschedule-insns">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m32;-L/usr/lib32;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orx" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+  </Settings>
+  <Dependencies name="Debug_x64">
+  </Dependencies>
+  <Dependencies name="Profile_x64">
+  </Dependencies>
+  <Dependencies name="Release_x64">
+  </Dependencies>
+  <Dependencies name="Debug_x32">
+  </Dependencies>
+  <Dependencies name="Profile_x32">
+  </Dependencies>
+  <Dependencies name="Release_x32">
+  </Dependencies>
+</CodeLite_Project>
