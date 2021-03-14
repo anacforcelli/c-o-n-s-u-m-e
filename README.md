@@ -8,9 +8,9 @@ But the world fights it. Any other living thing will flinch at its sight, and ju
 You won't let that happen.
 
 Inspired by CARRION and Plague Inc, 
+
     C O N S U M E P R O J E C T.
 
-Made with ORX Engine
-https://wiki.orx-project.org/en/guides/beginners/main
-
-LEARN
+Made with ORX Engine as a trainment to learn more about the engine.
+See the beginning trainment at: https://wiki.orx-project.org/en/guides/beginners/main
+For more information on the ORX engine, consult the website: https://orx-project.org/ 
